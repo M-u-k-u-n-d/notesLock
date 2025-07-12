@@ -1,3 +1,4 @@
+// UserRepository.java
 package com.secure.notes.repositories;
 
 import com.secure.notes.models.User;
@@ -10,6 +11,7 @@ import java.util.Optional;
 public interface UserRepository extends JpaRepository<User, Long> {
     Optional<User> findByUserName(String username);
 
+    // Added this
+    Boolean existsByEmail(String email);
     Boolean existsByUserName(String username);
 }
-
