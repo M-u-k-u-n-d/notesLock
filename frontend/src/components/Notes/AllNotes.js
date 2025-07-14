@@ -10,19 +10,24 @@ const AllNotes = () => {
   const [notes, setNotes] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
-
   const fetchNotes = async () => {
     setLoading(true);
     try {
       const response = await api.get("/notes");
 
-      const parsedNotes = response.data.map((note) => ({
-        ...note,
-        parsedContent: JSON.parse(note.content).content, // Assuming each note's content is JSON-formatted.
-      }));
+      const parsedNotes = Array.isArray(response?.data)
+        ? response.data.map((note) => ({
+            ...note,
+            parsedContent: JSON.parse(note?.content).content,
+          }))
+        : [];
+
       setNotes(parsedNotes);
     } catch (error) {
-      setError(error.response.data.message);
+      setError(
+        error?.response?.data?.message ||
+          "Something went wrong while fetching notes."
+      );
       console.error("Error fetching notes", error);
     } finally {
       setLoading(false);
