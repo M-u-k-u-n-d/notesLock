@@ -28,4 +28,5 @@ public class AuditLogController {
     public List<AuditLog> getNoteAuditLogs(@PathVariable Long id){
         return auditLogService.getAuditLogsForNoteId(id);
     }
+
 }

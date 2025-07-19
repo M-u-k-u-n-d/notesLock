@@ -91,7 +91,7 @@ const AllNotes = () => {
             ) : (
               <>
                 <div className="pt-10 grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-y-10 gap-x-5 justify-center">
-                  {notes.map((item) => (
+                  {notes?.map((item) => (
                     <NoteItems key={item.id} {...item} id={item.id} />
                   ))}
                 </div>

@@ -1,5 +1,3 @@
-
-// SignupRequest.java
 package com.secure.notes.security.request;
 
 import java.util.Set;
@@ -28,5 +26,3 @@ public class SignupRequest {
     @Size(min = 6, max = 40)
     private String password;
 }
-
-

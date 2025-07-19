@@ -67,7 +67,7 @@ const App = () => {
               <Admin />
             </ProtectedRoute>
           }
-        />
+        />  
         <Route
           path="/profile"
           element={

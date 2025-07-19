@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:3000", maxAge = 3600, allowCredentials="true")
 @RestController
 @RequestMapping("/api/admin")
 //@PreAuthorize("hasRole('ROLE_ADMIN')")
@@ -40,9 +39,9 @@ public class AdminController {
                 HttpStatus.OK);
     }
 
-    // AdminController
     @PutMapping("/update-lock-status")
-    public ResponseEntity<String> updateAccountLockStatus(@RequestParam Long userId, @RequestParam boolean lock) {
+    public ResponseEntity<String> updateAccountLockStatus(@RequestParam Long userId,
+                                                          @RequestParam boolean lock) {
         userService.updateAccountLockStatus(userId, lock);
         return ResponseEntity.ok("Account lock status updated");
     }
@@ -53,13 +52,15 @@ public class AdminController {
     }
 
     @PutMapping("/update-expiry-status")
-    public ResponseEntity<String> updateAccountExpiryStatus(@RequestParam Long userId, @RequestParam boolean expire) {
+    public ResponseEntity<String> updateAccountExpiryStatus(@RequestParam Long userId,
+                                                            @RequestParam boolean expire) {
         userService.updateAccountExpiryStatus(userId, expire);
         return ResponseEntity.ok("Account expiry status updated");
     }
 
     @PutMapping("/update-enabled-status")
-    public ResponseEntity<String> updateAccountEnabledStatus(@RequestParam Long userId, @RequestParam boolean enabled) {
+    public ResponseEntity<String> updateAccountEnabledStatus(@RequestParam Long userId,
+                                                             @RequestParam boolean enabled) {
         userService.updateAccountEnabledStatus(userId, enabled);
         return ResponseEntity.ok("Account enabled status updated");
     }
@@ -71,7 +72,8 @@ public class AdminController {
     }
 
     @PutMapping("/update-password")
-    public ResponseEntity<String> updatePassword(@RequestParam Long userId, @RequestParam String password) {
+    public ResponseEntity<String> updatePassword(@RequestParam Long userId,
+                                                 @RequestParam String password) {
         try {
             userService.updatePassword(userId, password);
             return ResponseEntity.ok("Password updated");
@@ -79,6 +81,5 @@ public class AdminController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }
     }
-
 
 }

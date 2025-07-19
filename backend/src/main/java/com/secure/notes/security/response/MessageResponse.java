@@ -1,5 +1,3 @@
-
-// MessageResponse.java
 package com.secure.notes.security.response;
 
 import lombok.Getter;

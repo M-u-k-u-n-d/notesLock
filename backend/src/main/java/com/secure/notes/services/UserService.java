@@ -5,29 +5,34 @@ import com.secure.notes.models.Role;
 import com.secure.notes.models.User;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface UserService {
     void updateUserRole(Long userId, String roleName);
 
     List<User> getAllUsers();
 
-    User findByUsername(String username);
-
     UserDTO getUserById(Long id);
 
-    void updatePassword(Long userId, String password);
+    User findByUsername(String username);
 
     void updateAccountLockStatus(Long userId, boolean lock);
 
-    public void updateAccountExpiryStatus(Long userId, boolean expire);
+    List<Role> getAllRoles();
 
-    public void updateAccountEnabledStatus(Long userId, boolean enabled);
+    void updateAccountExpiryStatus(Long userId, boolean expire);
+
+    void updateAccountEnabledStatus(Long userId, boolean enabled);
 
     void updateCredentialsExpiryStatus(Long userId, boolean expire);
 
-    List<Role> getAllRoles();
+    void updatePassword(Long userId, String password);
 
     void generatePasswordResetToken(String email);
 
     void resetPassword(String token, String newPassword);
+
+    Optional<User> findByEmail(String email);
+
+    User registerUser(User user);
 }
