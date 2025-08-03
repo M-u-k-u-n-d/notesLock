@@ -64,27 +64,7 @@ const Navbar = () => {
               </Link>
             </>
           )}
-
-          <Link to="/contact">
-            <li
-              className={`${
-                pathName === "/contact" ? "font-semibold " : ""
-              } py-2 cursor-pointer hover:text-slate-300`}
-            >
-              Contact
-            </li>
-          </Link>
-
-          <Link to="/about">
-            <li
-              className={`py-2 cursor-pointer hover:text-slate-300 ${
-                pathName === "/about" ? "font-semibold " : ""
-              }`}
-            >
-              About
-            </li>
-          </Link>
-
+      
           {token ? (
             <>
               <Link to="/profile">

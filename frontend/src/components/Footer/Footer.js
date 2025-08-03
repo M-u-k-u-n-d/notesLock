@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import {
-  FaFacebookF,
+  FaGithub ,
   FaTwitter,
   FaLinkedinIn,
-  FaInstagram,
+  FaLaptopCode,
 } from "react-icons/fa";
 
 const Footer = () => {
@@ -14,18 +14,8 @@ const Footer = () => {
       <div className="xl:px-10 sm:px-6 px-4  min-h-28  flex lg:flex-row flex-col  lg:gap-0 gap-5  justify-between items-center ">
         <ul className="flex flex-1  md:gap-6 gap-4   text-white flex-row items-center ">
           <li>
-            <Link to="/about">
-              <span className="hover:underline">About Us</span>
-            </Link>
-          </li>
-          <li>
             <Link to="/">
               <span className="hover:underline">Services</span>
-            </Link>
-          </li>
-          <li>
-            <Link to="/contact">
-              <span className="hover:underline">Contact</span>
             </Link>
           </li>
           <li>
@@ -35,34 +25,34 @@ const Footer = () => {
           </li>
         </ul>
 
-        <p className="w-fit  flex items-center text-white text-sm">
-          <span>&copy;{currentYear} SecureNote | All rights reserved.</span>
-        </p>
-
         <div className="flex-1  flex flex-row gap-6 lg:justify-end justify-start items-center">
           <Link
             className="text-white border h-10 w-10 flex justify-center items-center border-white rounded-full p-2 hover:bg-blue-600 transition-colors duration-300"
-            to="https://facebook.com"
+            to="https://github.com/M-u-k-u-n-d"
+            target="_blank"
           >
-            <FaFacebookF width={20} height={20} />
+            <FaGithub  width={20} height={20} />
           </Link>{" "}
           <Link
             className="text-white border h-10 w-10 flex justify-center items-center border-white rounded-full p-2 hover:bg-blue-600 transition-colors duration-300"
-            to="https://facebook.com"
+            to="https://www.linkedin.com/in/mukund-tiwari-06b433219/"
+            target="_blank"
           >
             <FaLinkedinIn width={20} height={20} />
           </Link>{" "}
           <Link
             className="text-white border h-10 w-10 flex justify-center items-center border-white rounded-full p-2 hover:bg-blue-600 transition-colors duration-300"
-            to="https://facebook.com"
+            to="https://x.com/itsMukundTiwari"
+            target="_blank"
           >
             <FaTwitter width={20} height={20} />
           </Link>{" "}
           <Link
             className="text-white border h-10 w-10 flex justify-center items-center border-white rounded-full p-2 hover:bg-blue-600 transition-colors duration-300"
-            to="https://facebook.com"
+            to="https://leetcode.com/u/Mukund_Tiwari/"
+            target="_blank"
           >
-            <FaInstagram width={20} height={20} />
+            <FaLaptopCode width={20} height={20} />
           </Link>
         </div>
       </div>

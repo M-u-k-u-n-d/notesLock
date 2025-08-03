@@ -15,8 +15,6 @@ import ForgotPassword from "./components/Auth/ForgotPassword";
 import OAuth2RedirectHandler from "./components/Auth/OAuth2RedirectHandler";
 import { Toaster } from "react-hot-toast";
 import NotFound from "./components/NotFound";
-import ContactPage from "./components/contactPage/ContactPage";
-import AboutPage from "./components/aboutPage/AboutPage";
 import ResetPassword from "./components/Auth/ResetPassword";
 import Footer from "./components/Footer/Footer";
 
@@ -30,8 +28,6 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
-        <Route path="/contact" element={<ContactPage />} />
-        <Route path="/about" element={<AboutPage />} />
         <Route path="/reset-password" element={<ResetPassword />} />
 
         <Route
